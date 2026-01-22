@@ -4,6 +4,7 @@ import AboutSection from "./(root)/home/AboutSection";
 import { ServicesStrip } from "./(root)/home/ServicesStrip";
 import VehicleClassesSection from "./(root)/home/VehicleClassesSection";
 import ServicesGrid from "./(root)/home/ServicesGrid";
+import ContactPage from "./(root)/home/Contact";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <ServicesStrip />
       <ServicesGrid/>
       <VehicleClassesSection/>
+      <ContactPage/>
     </>
   );
 }
