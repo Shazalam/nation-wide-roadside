@@ -3,21 +3,21 @@ import React from "react";
 const AboutSection = () => {
   return (
     <section className="bg-white py-12 sm:py-16 md:py-20">
-      <div className="mx-auto w-full max-w-4xl px-4 text-center">
+      <div className="mx-auto w-full max-w-6xl px-6 text-center ">
       
 
         {/* Heading */}
-        <h2 className="mt-3 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
+        <h2 className="mt-3 text-2xl font-bold tracking-tight text-blue-600 sm:text-4xl uppercase">
           Roadside is in our DNA
         </h2>
 
         {/* Short supporting line */}
-        <p className="mt-3 text-sm text-slate-500 sm:text-base">
+        {/* <p className="mt-3 text-sm text-slate-500 sm:text-base">
           Decades of nationwide roadside experience for drivers, fleets, and insurance partners.
-        </p>
+        </p> */}
 
         {/* Body copy */}
-        <div className="mt-8 space-y-5 text-left text-sm leading-relaxed text-slate-800 sm:text-base">
+        <div className="mt-8 space-y-5 text-left text-lg sm:text-xl  leading-relaxed text-slate-800 ">
           <p>
             National Automobile Club is the premier provider of 24/7 roadside assistance in the USA.
             Our mission is to provide drivers with total road security and unparalleled support when

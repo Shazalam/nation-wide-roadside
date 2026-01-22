@@ -130,7 +130,7 @@ export function HeroSection() {
       {/* Background image */}
       <div className="absolute inset-0 -z-10">
         <Image
-          src="/images/hero-truck.jpg" // put your truck image here
+          src="/images/hero-truck-1.jpg" // put your truck image here
           alt="Roadside assistance van on highway"
           fill
           priority
@@ -160,11 +160,14 @@ export function HeroSection() {
           <Link href="#contact">
             <Button
               size="lg"
-              className="bg-[#ffd83d] text-slate-900 hover:bg-[#f5c623] border border-black/10"
+              className="bg-[#f5c623] text-slate-900 hover:bg-[#f5c623] border border-black/10"
             >
               LEARN MORE
             </Button>
           </Link>
+          {/* <Button>
+            CALL NOW: +1 (800) 000‑0000
+          </Button> */}
         </div>
       </div>
     </section>

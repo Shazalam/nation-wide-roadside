@@ -27,12 +27,12 @@ export function ServicesStrip() {
 
       <div className="mx-auto w-full max-w-6xl px-4 py-12 text-center sm:py-14 md:py-16">
         {/* Heading */}
-        <h2 className="text-lg font-semibold tracking-[0.22em] text-white sm:text-xl">
+        <h2 className=" text-2xl font-bold tracking-tight text-white sm:text-4xl uppercase">
           NO PROBLEM IS TOO BIG OR SMALL
         </h2>
 
         {/* Icons row */}
-        <div className="mt-10 grid grid-cols-2 gap-x-6 gap-y-10 text-white sm:grid-cols-3 md:grid-cols-6 md:gap-x-10">
+        <div className="mt-20 grid grid-cols-2 gap-x-6 gap-y-10 text-white sm:grid-cols-3 md:grid-cols-6 md:gap-x-10">
           {items.map(({ label, Icon }) => (
             <div
               key={label}
