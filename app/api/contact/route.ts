@@ -1,48 +1,36 @@
-import { ContactLead } from "@/app/lib/db/models/ContactLead";
-import { connectDB } from "@/app/lib/db/mongoose";
-import { contactSchema } from "@/app/lib/validation/contact";
-import { NextRequest, NextResponse } from "next/server";
+import { ApiResponse } from './../../../lib/utils/apiResponse';
+import { createContactLead } from "@/lib/services/contactLead.service";
+import { contactSchema } from "@/lib/validation/contact";
+import { NextRequest } from "next/server";
+import { ZodError } from "zod";
 
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
 
-    const parsed = contactSchema.safeParse(body);
-    if (!parsed.success) {
-      return NextResponse.json(
-        { error: "Validation failed", details: parsed.error.flatten() },
-        { status: 400 }
-      );
+    const validatedData = contactSchema.parse(body);
+
+    const lead = await createContactLead(validatedData);
+
+    return ApiResponse.created({ message: "Contact lead created successfully", lead });
+  } catch (caughtError: unknown) {
+    // 5️⃣ Zod validation error
+    if (caughtError instanceof ZodError) {
+      return ApiResponse.validationError(caughtError.flatten().fieldErrors);
     }
 
-    const data = parsed.data;
+    // 6️⃣ Known service / business error
+    if (typeof caughtError === "object" && caughtError !== null && "code" in caughtError) {
+      const err = caughtError as {
+        code: string;
+        message: string;
+        details?: unknown;
+      };
 
-    // honeypot: bots will fill this, humans won't
-    if (data.companyHidden && data.companyHidden.trim() !== "") {
-      return NextResponse.json({ ok: true });
+      return ApiResponse.error("error", err.message, 400, err.code, err.details);
     }
 
-    await connectDB();
-
-    await ContactLead.create({
-      firstName: data.firstName,
-      lastName: data.lastName,
-      companyName: data.companyName,
-      phone: data.phone,
-      email: data.email,
-      fleetType: data.fleetType,
-      fleetSize: data.fleetSize,
-      message: data.message
-    });
-
-    // TODO: trigger email/Slack notification here if you want.
-
-    return NextResponse.json({ ok: true });
-  } catch (err) {
-    console.error("Contact API error", err);
-    return NextResponse.json(
-      { error: "Internal server error" },
-      { status: 500 }
-    );
+    // 7️⃣ Unknown / crash error
+    return ApiResponse.internalError("Internal server error");
   }
 }

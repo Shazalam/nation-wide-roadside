@@ -11,9 +11,9 @@ import { clsx } from "clsx";
 import { Button } from "../common/Button";
 
 const inputBase =
-  "w-full rounded-md border border-slate-300 bg-slate-50 px-3 py-2 text-sm shadow-sm focus:border-brand-primary focus:bg-white focus:outline-none focus:ring-1 focus:ring-brand-primary";
+  "w-full rounded-md border border-slate-300 bg-slate-50 px-3 py-2 text-sm shadow-sm focus:border-brand-primary focus:bg-white focus:outline-none focus:ring-1 focus:ring-brand-primary placeholder:text-black  text-black";
 
-export function ContactForm() {
+  export function ContactForm() {
   const [status, setStatus] = useState<
     "idle" | "success" | "error"
   >("idle");
@@ -33,10 +33,10 @@ export function ContactForm() {
       phone: "",
       email: "",
       fleetType: "individual",
-      fleetSize: undefined,
+      fleetSize: "",
       message: "",
       // agreeToTerms: false,
-      companyHidden: ""
+      // companyHidden: ""
     }
   });
 
@@ -68,7 +68,7 @@ export function ContactForm() {
 
   return (
     <form
-      onSubmit={handleSubmit(onSubmit)}
+     onSubmit={handleSubmit<ContactInput>(onSubmit)}
       className="mx-auto w-full max-w-3xl rounded-2xl bg-white/95 p-6 shadow-[0_18px_50px_rgba(15,23,42,0.12)] sm:p-8"
       noValidate
     >
@@ -174,7 +174,7 @@ export function ContactForm() {
           </label>
           <input
             className={inputBase}
-            type="number"
+            type="text"
             min={0}
             {...register("fleetSize")}
           />
@@ -205,7 +205,7 @@ export function ContactForm() {
       </div>
 
       {/* Honeypot: hidden for humans */}
-      <div className="hidden">
+      {/* <div className="hidden">
         <label>
           Company
           <input
@@ -214,7 +214,7 @@ export function ContactForm() {
             {...register("companyHidden")}
           />
         </label>
-      </div>
+      </div> */}
 
       {/* Terms */}
       {/* <div className="mt-4 flex items-start gap-2">
