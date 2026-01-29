@@ -27,8 +27,7 @@ export const contactSchema = z.object({
   fleetType: z.enum(["individual", "small", "medium", "large", "other"]),
 
   // fleetSize is Number in Mongo, so we validate as a number (optional, >= 0)
-  fleetSize: z
-    .number()
+  fleetSize: z.number()
     .int("Fleet size must be an integer")
     .min(0, "Fleet size must be a positive number")
     .optional(),

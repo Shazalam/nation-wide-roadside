@@ -2,8 +2,6 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { clsx } from "clsx";
-import { Button } from "./Button";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -34,9 +32,7 @@ export function Navbar() {
             </a>
           </div>
         </div>
-      </div>
-
-      
+      </div>      
     </header>
   );
 }
