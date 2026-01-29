@@ -17,15 +17,19 @@ const inputBase =
   "w-full rounded-md border border-slate-300 bg-slate-50 px-3 py-2 text-sm shadow-sm focus:border-brand-primary focus:bg-white focus:outline-none focus:ring-1 focus:ring-brand-primary placeholder:text-black  text-black";
 
 export function ContactForm() {
-  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
-  const [statusMessage, setStatusMessage] = useState("");
+  const dispatch = useAppDispatch();
+  const { loading, error, meta } = useAppSelector((state) => state.contactLead);
+
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalSuccess, setModalSuccess] = useState(false);
+  const [modalMessage, setModalMessage] = useState("");
+  const [hasSubmitted, setHasSubmitted] = useState(false);
 
   const {
     register,
     handleSubmit,
     reset,
-    watch,
-    formState: { errors, isSubmitting },
+    formState: { errors },
   } = useForm<ContactInputRequest>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
@@ -40,26 +44,21 @@ export function ContactForm() {
     },
   });
 
-  const dispatch = useAppDispatch();
-  const {  loading, error, meta } = useAppSelector(
-    (state) => state.contactLead,
-  );
-  const [modalOpen, setModalOpen] = useState(false);
-  const [modalSuccess, setModalSuccess] = useState(false);
-  const [modalMessage, setModalMessage] = useState("");
-
   // Fetch
   // useEffect(() => {
   //   dispatch(getAllContactLeadsThunk({ page: 1, limit: 10 }));
   // }, []);
 
   useEffect(() => {
+      if (!hasSubmitted) return; // 👈 KEY LINE
+
     if (!loading && error) {
       setModalSuccess(false);
       setModalMessage(
         error.message || "Something went wrong. Please try again.",
       );
       setModalOpen(true);
+       setHasSubmitted(false);
     }
 
     if (!loading && !error) {
@@ -69,10 +68,12 @@ export function ContactForm() {
       );
       setModalOpen(true);
       reset();
+       setHasSubmitted(false);
     }
-  }, [loading, error, meta, reset]);
+  }, [loading, error, hasSubmitted, meta, reset]);
 
   function onSubmit(values: ContactInputRequest) {
+     setHasSubmitted(true);
     // Create
     dispatch(createContactLeadThunk(values));
   }
@@ -260,7 +261,7 @@ export function ContactForm() {
             {loading ? "Submitting..." : "Submit request"}
           </Button>
 
-          {status !== "idle" && statusMessage && (
+          {/* {status !== "idle" && statusMessage && (
             <p
               className={clsx(
                 "text-xs sm:text-sm",
@@ -269,7 +270,7 @@ export function ContactForm() {
             >
               {statusMessage}
             </p>
-          )}
+          )} */}
         </div>
       </form>
 
