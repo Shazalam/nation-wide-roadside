@@ -1,7 +1,7 @@
 // import type { Metadata } from "next";
 // import { Geist, Geist_Mono } from "next/font/google";
 // import "./globals.css";
-// import Navbar from "./components/common/Navbar";
+// import { Navbar } from "./components/common/Navbar";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -35,14 +35,44 @@
 //   );
 // }
 
+
+
+
 import type { Metadata } from "next";
 import "./globals.css";
-import { MainLayout } from "./components/layout/MainLayout";
 import { Navbar } from "./components/common/Navbar";
+import Providers from "./Providers";
 
 export const metadata: Metadata = {
-  title: "Roadside Assistance",
-  description: "24/7 roadside assistance for fleets and drivers.",
+  title: "24/7 Towing & Roadside Assistance | Fast Tow Service USA",
+  description:
+    "Nationwide 24/7 towing and roadside assistance in the USA for individual drivers and commercial fleets. Jump starts, tire changes, fuel delivery, lockouts, and emergency towing.",
+  keywords: [
+    "towing service",
+    "tow truck near me",
+    "roadside assistance",
+    "24/7 towing",
+    "emergency towing",
+    "fleet roadside assistance",
+    "commercial towing",
+    "USA",
+  ],
+  // openGraph: {
+  //   title: "24/7 Towing & Roadside Assistance Across the USA",
+  //   description:
+  //     "Reliable towing and roadside assistance for cars, trucks, and fleets anywhere in the USA, available 24/7.",
+  //   url: "https://your-domain.com",
+  //   siteName: "Your Tow Company Name",
+  //   type: "website",
+  //   locale: "en_US",
+  // },
+  // twitter: {
+  //   card: "summary_large_image",
+  //   title: "24/7 Towing & Roadside Assistance | USA",
+  //   description:
+  //     "Fast, reliable towing and roadside assistance for drivers and fleets across the USA.",
+  // },
+  // metadataBase: new URL("https://your-domain.com"),
 };
 
 export default function RootLayout({
@@ -53,10 +83,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-brand-mutedBg text-slate-900">
-        <Navbar />
-        {/* <MainLayout> */}
+        <Providers>
+          <Navbar />
           {children}
-        {/* </MainLayout> */}
+        </Providers>
       </body>
     </html>
   );
