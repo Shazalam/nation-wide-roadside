@@ -162,7 +162,7 @@ export function HeroSection() {
               size="lg"
               className="bg-[#f5c623] text-slate-900 hover:bg-[#f5c623] border border-black/10"
             >
-              LEARN MORE
+              CALL NOW: +1 (800) 000‑0000
             </Button>
           </Link>
           {/* <Button>
