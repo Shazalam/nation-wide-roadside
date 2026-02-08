@@ -38,7 +38,7 @@ export function ContactForm() {
       companyName: "",
       phone: "",
       email: "",
-      fleetType: "individual",
+      fleetType: "passenger_light",
       fleetSize: 0,
       message: "",
     },
@@ -50,7 +50,7 @@ export function ContactForm() {
   // }, []);
 
   useEffect(() => {
-      if (!hasSubmitted) return; // 👈 KEY LINE
+    if (!hasSubmitted) return; // 👈 KEY LINE
 
     if (!loading && error) {
       setModalSuccess(false);
@@ -58,7 +58,7 @@ export function ContactForm() {
         error.message || "Something went wrong. Please try again.",
       );
       setModalOpen(true);
-       setHasSubmitted(false);
+      setHasSubmitted(false);
     }
 
     if (!loading && !error) {
@@ -68,12 +68,12 @@ export function ContactForm() {
       );
       setModalOpen(true);
       reset();
-       setHasSubmitted(false);
+      setHasSubmitted(false);
     }
   }, [loading, error, hasSubmitted, meta, reset]);
 
   function onSubmit(values: ContactInputRequest) {
-     setHasSubmitted(true);
+    setHasSubmitted(true);
     // Create
     dispatch(createContactLeadThunk(values));
   }
@@ -162,12 +162,17 @@ export function ContactForm() {
               Fleet type
             </label>
             <select className={inputBase} {...register("fleetType")}>
-              <option value="individual">Individual</option>
-              <option value="small">Small fleet (1–20)</option>
-              <option value="medium">Medium fleet (21–100)</option>
-              <option value="large">Large fleet (100+)</option>
-              <option value="other">Other</option>
+              <option value="">-- Select Class --</option>
+              <option value="passenger_light">Passenger/Light Util</option>
+              <option value="utility">Utility Vehicle</option>
+              <option value="medium_duty">Medium Duty</option>
+              <option value="heavy_duty">Heavy Duty</option>
+              <option value="motorcycle">Motorcycle</option>
+              <option value="specialty">Specialty</option>
+              <option value="super_duty">Super Duty</option>
+              <option value="ev">EV</option>
             </select>
+
             {errors.fleetType && (
               <p className="mt-1 text-xs text-red-600">
                 {errors.fleetType.message}
@@ -252,7 +257,7 @@ export function ContactForm() {
       )} */}
 
         {/* Submit + status */}
-        <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between border-r-amber-500">
+        <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <Button
             type="submit"
             disabled={loading}

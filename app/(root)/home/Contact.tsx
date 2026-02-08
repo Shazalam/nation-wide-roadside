@@ -2,7 +2,7 @@ import { ContactForm } from "@/app/components/forms/ContactForm";
 
 export default function ContactPage() {
   return (
-    <section className="bg-[#fff] py-12 sm:py-16 md:py-20">
+    <section id="contact" className="bg-[#fff] py-12 sm:py-16 md:py-20 scroll-mt-24">
       <div className="mx-auto w-full max-w-5xl px-4">
         <div className="text-center">
           <h1 className="mt-3 text-2xl font-bold tracking-tight text-blue-600 sm:text-4xl uppercase">
