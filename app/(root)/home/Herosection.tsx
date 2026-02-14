@@ -1,13 +1,13 @@
-"use client";
 
 import { Button } from "@/app/components/common/Button";
-import Image from "next/image";
-import Link from "next/link";
+import Image from "next/image"
 
-export function HeroSection() {
-
+export default function HeroSection() {
   return (
-    <section id="hero-section" className="relative isolate overflow-hidden text-white">
+    <section
+      id="hero-section"
+      className="relative isolate overflow-hidden text-white"
+    >
       {/* Background image */}
       <div className="absolute inset-0 -z-10">
         <Image
@@ -38,17 +38,20 @@ export function HeroSection() {
         </p>
 
         <div className="mt-8">
-          <Link href="#contact">
+          {/* <Link href="#contact">
             <Button
               size="lg"
               className="bg-[#f5c623] text-slate-900 hover:bg-[#f5c623] border border-black/10 cursor-pointer"
             >
               Contact US
             </Button>
-          </Link>
-          {/* <Button>
+          </Link> */}
+          <Button
+            size="lg"
+            className="bg-[#f5c623] text-slate-900 hover:bg-[#f5c623] border border-black/10 cursor-pointer "
+          >
             CALL NOW: +1 (800) 000‑0000
-          </Button> */}
+          </Button>
         </div>
       </div>
     </section>
