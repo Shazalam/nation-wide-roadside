@@ -24,7 +24,7 @@ export const contactSchema = z.object({
     .max(200, "Email is too long"),
 
   // fleetType is a string in the DB but we keep a controlled enum on the API
-  fleetType: z.enum(["individual", "small", "medium", "large", "other"]),
+  fleetType: z.enum(["passenger_light", "utility", "medium_duty", "heavy_duty", "motorcycle","specialty","super_duty","ev"]),
 
   // fleetSize is Number in Mongo, so we validate as a number (optional, >= 0)
   fleetSize: z.number()

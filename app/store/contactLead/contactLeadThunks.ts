@@ -18,10 +18,10 @@ export const createContactLeadThunk = createAsyncThunk<
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
-    });
+    });                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
 
     const response: ApiResponse<{ lead: ContactLead }> = await res.json();
-
+    console.log("res =>",res)
     if (!res.ok || response.status !== "success") {
       return rejectWithValue(response);
     }

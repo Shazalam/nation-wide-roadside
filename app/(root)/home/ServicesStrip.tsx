@@ -1,5 +1,4 @@
 // components/home/ServicesStrip.tsx
-"use client";
 
 import {
   CarFront,
@@ -19,7 +18,7 @@ const items = [
   { label: "FUEL DELIVERY", Icon: Fuel }
 ];
 
-export function ServicesStrip() {
+export default function ServicesStrip() {
   return (
     <section className="relative overflow-hidden">
       {/* Strong flat blue background for maximum readability */}
