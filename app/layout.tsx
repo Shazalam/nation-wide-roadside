@@ -41,6 +41,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Navbar } from "./components/common/Navbar";
+import { Footer } from "./components/common/Footer";
 import Providers from "./Providers";
 
 export const metadata: Metadata = {
@@ -57,22 +58,6 @@ export const metadata: Metadata = {
     "commercial towing",
     "USA",
   ],
-  // openGraph: {
-  //   title: "24/7 Towing & Roadside Assistance Across the USA",
-  //   description:
-  //     "Reliable towing and roadside assistance for cars, trucks, and fleets anywhere in the USA, available 24/7.",
-  //   url: "https://your-domain.com",
-  //   siteName: "Your Tow Company Name",
-  //   type: "website",
-  //   locale: "en_US",
-  // },
-  // twitter: {
-  //   card: "summary_large_image",
-  //   title: "24/7 Towing & Roadside Assistance | USA",
-  //   description:
-  //     "Fast, reliable towing and roadside assistance for drivers and fleets across the USA.",
-  // },
-  // metadataBase: new URL("https://your-domain.com"),
 };
 
 export default function RootLayout({
@@ -82,10 +67,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-brand-mutedBg text-slate-900">
+      <body className="bg-brand-mutedBg text-slate-900 selection:bg-brand-primary selection:text-white antialiased">
         <Providers>
-          <Navbar />
-          {children}
+          <div className="flex flex-col min-h-screen">
+            <Navbar />
+            <main className="flex-grow">{children}</main>
+            <Footer />
+          </div>
         </Providers>
       </body>
     </html>

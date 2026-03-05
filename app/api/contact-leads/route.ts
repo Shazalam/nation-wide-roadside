@@ -9,23 +9,27 @@ import { ZodError } from "zod";
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
+    console.log("POST /api/contact-leads body:", JSON.stringify(body, null, 2));
 
     const validatedData = contactSchema.parse(body);
 
     const lead = await createContactLead(validatedData);
+    console.log("Contact lead created:", lead._id);
 
     return ApiResponse.created({
       message: "Contact lead created successfully",
       lead,
     });
-    
+
   } catch (caughtError: unknown) {
-    // 5️⃣ Zod validation error
+    console.error("POST /api/contact-leads error:", caughtError);
+
+    // Zod validation error
     if (caughtError instanceof ZodError) {
       return ApiResponse.validationError(caughtError.flatten().fieldErrors);
     }
 
-    // 6️⃣ Known service / business error
+    // Business or database error from our code
     if (
       typeof caughtError === "object" &&
       caughtError !== null &&
@@ -46,8 +50,13 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // 7️⃣ Unknown / crash error
-    return ApiResponse.internalError("Internal server error");
+    // Standard JS error
+    if (caughtError instanceof Error) {
+      return ApiResponse.internalError(caughtError.message);
+    }
+
+    // Unknown error
+    return ApiResponse.internalError("An unexpected server error occurred");
   }
 }
 
@@ -69,7 +78,7 @@ export async function GET(req: NextRequest) {
       message: "Contact leads fetched successfully",
       ...result,
     });
-    
+
   } catch (caughtError: unknown) {
     // Known service / business error
     if (

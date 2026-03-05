@@ -14,19 +14,26 @@ export const createContactLeadThunk = createAsyncThunk<
 >(
   "contactLead/create",
   async (payload, { rejectWithValue }) => {
-    const res = await fetch(BASE_URL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    });                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+    try {
+      const res = await fetch(BASE_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
 
-    const response: ApiResponse<{ lead: ContactLead }> = await res.json();
-    console.log("res =>",res)
-    if (!res.ok || response.status !== "success") {
-      return rejectWithValue(response);
+      const response: ApiResponse<{ lead: ContactLead }> = await res.json();
+
+      if (!res.ok || response.status !== "success") {
+        return rejectWithValue(response);
+      }
+
+      return response.data!.lead;
+    } catch (err: any) {
+      return rejectWithValue({
+        status: "error",
+        message: err.message || "Network error. Please check your connection.",
+      } as ApiResponse);
     }
-
-    return response.data!.lead;
   }
 );
 

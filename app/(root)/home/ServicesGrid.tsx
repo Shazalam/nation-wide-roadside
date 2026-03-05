@@ -54,7 +54,7 @@ const services: Service[] = [
 
 const ServicesGrid: React.FC = () => {
   return (
-    <section className="bg-white py-12 sm:py-16 md:py-20">
+    <section id="services" className="bg-white py-12 sm:py-16 md:py-20">
       <div className="mx-auto w-full max-w-6xl px-4">
         {/* Heading */}
         <div className="text-center">

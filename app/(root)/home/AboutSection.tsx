@@ -2,9 +2,9 @@ import React from "react";
 
 const AboutSection = () => {
   return (
-    <section className="bg-white py-12 sm:py-16 md:py-20">
+    <section id="about" className="bg-white py-12 sm:py-16 md:py-20">
       <div className="mx-auto w-full max-w-6xl px-6 text-center ">
-      
+
         {/* Heading */}
         <h2 className="mt-3 text-2xl font-bold tracking-tight text-blue-600 sm:text-4xl uppercase">
           Roadside is in our DNA

@@ -31,7 +31,6 @@ export const contactSchema = z.object({
     .int("Fleet size must be an integer")
     .min(0, "Fleet size must be a positive number")
     .optional(),
-
   message: z
     .string()
     .min(10, "Please describe the nature of your request.")
