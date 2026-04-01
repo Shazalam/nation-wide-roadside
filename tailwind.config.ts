@@ -10,8 +10,15 @@ const config: Config = {
           primary: "#1769aa",
           dark: "#0f3557",
           accent: "#ffcc33",
-          mutedBg: "#f5f7fb"
+          mutedBg: "#f5f7fb",
+          slate: "#151921", // Very dark navy/grey from the image
+          slateCard: "#191e26", // Slightly lighter card background
+          slateBorder: "#2c333f", // Border color
         }
+      },
+      fontFamily: {
+        sans: ["var(--font-inter)", "sans-serif"],
+        oswald: ["var(--font-oswald)", "sans-serif"],
       },
       borderRadius: {
         pill: "9999px"

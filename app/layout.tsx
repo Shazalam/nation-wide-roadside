@@ -39,10 +39,14 @@
 
 
 import type { Metadata } from "next";
+import { Inter, Oswald } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "./components/common/Navbar";
 import { Footer } from "./components/common/Footer";
 import Providers from "./Providers";
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const oswald = Oswald({ subsets: ["latin"], variable: "--font-oswald" });
 
 export const metadata: Metadata = {
   title: "24/7 Towing & Roadside Assistance | Fast Tow Service USA",
@@ -66,7 +70,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${inter.variable} ${oswald.variable}`}>
       <body className="bg-brand-mutedBg text-slate-900 selection:bg-brand-primary selection:text-white antialiased">
         <Providers>
           <div className="flex flex-col min-h-screen">
