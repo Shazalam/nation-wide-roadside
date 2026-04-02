@@ -37,7 +37,7 @@ export default function ServicesStrip() {
               key={label}
               className="flex flex-col items-center gap-4 text-xs sm:text-sm"
             >
-              <div className="flex h-18 w-18 items-center justify-center rounded-full border border-white/80 bg-white/10 shadow-soft backdrop-blur-sm transition-transform duration-200 hover:-translate-y-1 hover:bg-white/15">
+              <div className="flex h-18 w-18 items-center justify-center rounded-full border border-white/80 bg-white/10 shadow-[0_10px_30px_rgba(15,53,87,0.18)] backdrop-blur-sm transition-transform duration-200 hover:-translate-y-1 hover:bg-white/15 cursor-pointer flex-none min-h-[72px] min-w-[72px] sm:min-h-[80px] sm:min-w-[80px]">
                 <Icon className="h-10 w-10 text-white" strokeWidth={1.8} />
               </div>
               <span className="font-medium tracking-[0.16em]">

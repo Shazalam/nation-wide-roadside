@@ -75,14 +75,7 @@ const ServicesGrid: React.FC = () => {
               className="flex h-full flex-col items-center justify-center rounded-2xl border border-slate-200/80 bg-white px-6 py-10 text-center shadow-[0_8px_24px_rgba(15,24,40,0.06)] transition-transform duration-150 hover:-translate-y-1 hover:shadow-[0_14px_40px_rgba(15,24,40,0.12)]"
             >
               <h3
-                className="
-    text-base
-    font-semibold
-    uppercase
-    tracking-[0.20em]
-    text-[#1786d4]        // stronger blue
-    sm:text-lg
-  "
+                className="text-base font-semibold uppercase tracking-[0.20em] text-[#1786d4] sm:text-lg"
               >
                 {service.title}
               </h3>

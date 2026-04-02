@@ -61,11 +61,15 @@ export function Footer() {
                             </li>
                             <li className="flex items-center gap-3">
                                 <Phone className="h-5 w-5 text-brand-primary shrink-0" />
-                                <span>+1 (800) XXX-XXXX</span>
+                                <a href="tel:+18556133131" className="hover:text-brand-primary transition-colors">
+                                    +1 (855) 613-3131
+                                </a>
                             </li>
                             <li className="flex items-center gap-3">
                                 <Mail className="h-5 w-5 text-brand-primary shrink-0" />
-                                <span>support@nationwideroadside.com</span>
+                                <a href="mailto:support@nationwideroadside.com" className="hover:text-brand-primary transition-colors">
+                                    support@nationwideroadside.com
+                                </a>
                             </li>
                         </ul>
                     </div>

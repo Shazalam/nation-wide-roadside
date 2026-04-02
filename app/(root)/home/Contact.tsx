@@ -6,21 +6,21 @@ export default function ContactPage() {
     <section id="contact" className="relative mesh-gradient py-20 sm:py-28 overflow-hidden scroll-mt-20">
       {/* Decorative patterns */}
       <div className="absolute top-0 right-0 -mr-20 -mt-20 opacity-20 pointer-events-none">
-        <div className="h-96 w-96 rounded-full bg-brand-primary blur-3xl" />
+        <div className="h-96 w-96 rounded-full bg-blue-600 blur-3xl" />
       </div>
       <div className="absolute bottom-0 left-0 -ml-20 -mb-20 opacity-20 pointer-events-none">
-        <div className="h-96 w-96 rounded-full bg-brand-accent blur-3xl" />
+        <div className="h-96 w-96 rounded-full bg-blue-400 blur-3xl" />
       </div>
 
       <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm font-medium text-brand-accent backdrop-blur-sm mb-6">
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm font-medium text-blue-400 backdrop-blur-sm mb-6">
             <HelpCircle className="h-4 w-4" />
             <span>Priority Fleet Support</span>
           </div>
 
-          <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl mb-6">
-            Instant Dispatch <span className="text-brand-accent">&</span> Queuing
+          <h2 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl mb-6">
+            Instant Dispatch <span className="text-blue-500">&</span> Queuing
           </h2>
 
           <p className="text-lg text-slate-300 mb-8 leading-relaxed">
@@ -28,10 +28,10 @@ export default function ContactPage() {
           </p>
 
           <div className="flex flex-wrap justify-center gap-6">
-            <div className="flex items-center gap-3 text-white font-semibold">
-              <PhoneCall className="h-5 w-5 text-brand-accent" />
-              <span>Direct Emergency: +1 (800) XXX-XXXX</span>
-            </div>
+            <a href="tel:+18556133131" className="flex items-center gap-3 text-white font-semibold hover:text-blue-200 transition-colors">
+              <PhoneCall className="h-5 w-5 text-blue-400" />
+              <span>Direct Emergency: +1 (855) 613-3131</span>
+            </a>
           </div>
         </div>
 

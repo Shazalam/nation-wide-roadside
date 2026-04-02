@@ -1,11 +1,13 @@
 "use client";
 
 import AboutSection from "./(root)/home/AboutSection";
+import FounderSection from "./(root)/home/FounderSection";
 import  ServicesStrip  from "./(root)/home/ServicesStrip";
 import VehicleClassesSection from "./(root)/home/VehicleClassesSection";
 import ServicesGrid from "./(root)/home/ServicesGrid";
 import ContactPage from "./(root)/home/Contact";
 import  HeroSection  from "./(root)/home/Herosection";
+import FleetDispatchSection from "./(root)/home/FleetDispatchSection";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowUp } from "lucide-react";
@@ -27,6 +29,8 @@ export default function Home() {
     <>
       <HeroSection />
       <AboutSection />
+      <FounderSection />
+      <FleetDispatchSection />
       <ServicesStrip />
       <ServicesGrid />
       <VehicleClassesSection />

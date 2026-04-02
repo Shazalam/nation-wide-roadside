@@ -32,7 +32,7 @@ export function Navbar() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b",
         isScrolled
-          ? "bg-white/80 backdrop-blur-lg border-slate-200 py-3 shadow-sm"
+          ? "bg-white/95 backdrop-blur-md border-slate-200 py-3 shadow-sm"
           : "bg-transparent border-transparent py-5"
       )}
     >
@@ -40,14 +40,14 @@ export function Navbar() {
         <div className="flex items-center justify-between ">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="bg-brand-primary p-2 rounded-lg group-hover:bg-brand-dark transition-colors">
+            <div className="bg-blue-600 p-2 rounded-lg group-hover:bg-blue-700 transition-colors">
               <Truck className="h-6 w-6 text-white" />
             </div>
             <span className={cn(
-              "text-xl font-black tracking-tighter transition-colors",
+              "text-xl font-bold tracking-tight transition-colors",
               isScrolled ? "text-slate-900" : "text-white"
             )}>
-              NATIONWIDE<span className="text-brand-primary">ROADSIDE</span>
+              NATIONWIDE <span className="text-blue-500">ROADSIDE</span>
             </span>
           </Link>
 
@@ -58,8 +58,8 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "text-sm font-bold uppercase tracking-wider transition-colors hover:text-brand-primary",
-                  isScrolled ? "text-slate-600" : "text-slate-200"
+                  "text-sm font-medium transition-colors hover:text-blue-600",
+                  isScrolled ? "text-slate-600" : "text-white/90"
                 )}
               >
                 {link.label}
@@ -69,13 +69,15 @@ export function Navbar() {
 
           {/* Action Button */}
           <div className="hidden md:block">
-            <Button
-              className="rounded-full px-6 font-bold"
-              size="sm"
-            >
-              <Phone className="mr-2 h-4 w-4 fill-current" />
-              (800) XXX-XXXX
-            </Button>
+            <a href="tel:+18556133131">
+              <Button
+                className="rounded-full px-6 font-semibold shadow-sm"
+                size="sm"
+              >
+                <Phone className="mr-2 h-4 w-4" />
+                (855) 613-3131
+              </Button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -101,15 +103,17 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-lg font-bold text-slate-900 px-4 py-2 hover:bg-slate-50 rounded-lg"
+                className="text-lg font-semibold text-slate-700 px-4 py-2 hover:bg-slate-50 rounded-lg"
               >
                 {link.label}
               </Link>
             ))}
-            <Button className="w-full h-12 rounded-xl mt-4 font-bold">
-              <Phone className="mr-2 h-5 w-5 fill-current" />
-              GET HELP NOW
-            </Button>
+            <a href="tel:+18556133131" className="block mt-4">
+              <Button className="w-full h-12 rounded-lg font-semibold cursor-pointer">
+                <Phone className="mr-2 h-5 w-5" />
+                GET HELP NOW
+              </Button>
+            </a>
           </div>
         </div>
       )}
