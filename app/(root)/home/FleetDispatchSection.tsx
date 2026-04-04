@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion, Variants } from "framer-motion";
-import { Truck, Wrench, Settings, CheckCircle2 } from "lucide-react";
+import { Truck, Zap, Target, Shield, Globe, Handshake, ChevronDown } from "lucide-react";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -71,24 +71,42 @@ const fleetCategories = [
   },
 ];
 
-const coreServices = [
+const whatSetsUsApart = [
   {
-    icon: <Truck className="h-8 w-8 text-emerald-400" />,
-    title: "Heavy-Duty Towing",
+    icon: <Zap className="h-7 w-7 text-amber-400" />,
+    title: "Rapid Response Dispatch",
     description:
-      "Class 6–8 vehicle recovery with certified operators deployed for the Nationwide Trans fleet.",
+      "Our live dispatchers are on call 24 hours a day, 365 days a year — coordinating the fastest possible response to every breakdown.",
   },
   {
-    icon: <Wrench className="h-8 w-8 text-blue-400" />,
-    title: "Fleet Recovery",
+    icon: <Target className="h-7 w-7 text-rose-500" />,
+    title: "Dedicated Fleet Focus",
     description:
-      "Rapid breakdown response keeping Nationwide Trans shipments moving without delay.",
+      "Serving a single logistics network means our team knows every route, every vehicle class, and every driver's needs inside and out.",
   },
   {
-    icon: <Settings className="h-8 w-8 text-amber-400" />,
-    title: "On-Site Mechanical",
+    icon: <Shield className="h-7 w-7 text-slate-300" />,
+    title: "18+ Years of Expertise",
     description:
-      "Mobile technicians dispatched directly to drivers anywhere across all 50 states.",
+      "Built on nearly two decades of transportation industry experience, our operations are guided by field-proven knowledge and leadership.",
+  },
+  {
+    icon: <Globe className="h-7 w-7 text-white" />,
+    title: "All 50 States, Coast to Coast",
+    description:
+      "No dead zones. Whether a driver breaks down in rural Montana or downtown Miami, our dispatch network covers every corner of the country.",
+  },
+  {
+    icon: <Truck className="h-7 w-7 text-emerald-500" />,
+    title: "All Vehicle Classes Covered",
+    description:
+      "From heavy-duty Class 8 big rigs to light utility vans, our certified service capabilities span the full commercial vehicle spectrum.",
+  },
+  {
+    icon: <Handshake className="h-7 w-7 text-amber-400" />,
+    title: "Integrated Logistics Partnership",
+    description:
+      "As the in-house roadside arm of Nationwide Trans Inc., we operate with full alignment — keeping freight on time and drivers safe.",
   },
 ];
 
@@ -154,7 +172,7 @@ const FleetDispatchSection = () => {
           </div>
         </div>
 
-        {/* -- CORE SERVICES SECTION -- */}
+        {/* -- WHAT SETS US APART SECTION -- */}
         <div className="pt-20 border-t border-white/[0.05]">
           <motion.h2
             initial={{ opacity: 0, x: -20 }}
@@ -162,29 +180,29 @@ const FleetDispatchSection = () => {
             viewport={{ once: true }}
             className="text-[11px] font-bold tracking-[0.25em] text-slate-500 uppercase mb-12"
           >
-            Core Services
+            WHAT SETS US APART
           </motion.h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {coreServices.map((service, idx) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {whatSetsUsApart.map((feature, idx) => (
               <motion.div
-                key={service.title}
+                key={feature.title}
                 custom={idx + 3}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={fadeUp}
-                className="flex flex-col gap-6 p-8 rounded-2xl bg-white/[0.02] border border-white/[0.05] transition-colors hover:bg-white/[0.04]"
+                className="flex flex-col gap-6 p-10 rounded-2xl bg-[#111821] border border-white/[0.05] transition-all duration-300 hover:bg-[#151d29] hover:border-white/[0.1] group"
               >
-                <div className="p-3 w-fit rounded-xl bg-white/[0.03] border border-white/[0.05]">
-                  {service.icon}
+                <div className="flex-shrink-0 mb-2">
+                  {feature.icon}
                 </div>
                 <div>
-                  <h4 className="text-lg font-bold text-white tracking-tight mb-3">
-                    {service.title}
+                  <h4 className="text-xl font-bold text-white tracking-tight mb-4 group-hover:text-amber-400 transition-colors">
+                    {feature.title}
                   </h4>
                   <p className="text-sm text-slate-400 font-light leading-relaxed">
-                    {service.description}
+                    {feature.description}
                   </p>
                 </div>
               </motion.div>
