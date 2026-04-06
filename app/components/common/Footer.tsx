@@ -27,26 +27,26 @@ export function Footer() {
                         </div> */}
                     </div>
 
-                    {/* Services */}
+                    {/* Dispatch Capabilities */}
                     <div>
-                        <h4 className="text-white font-bold uppercase tracking-widest text-xs mb-6">Our Services</h4>
+                        <h4 className="text-white font-bold uppercase tracking-widest text-[10px] mb-6">Dispatch Capabilities</h4>
                         <ul className="space-y-4 text-sm">
-                            <li><Link href="#services" className="hover:text-white transition-colors">Emergency Towing</Link></li>
-                            <li><Link href="#services" className="hover:text-white transition-colors">Heavy Duty Recovery</Link></li>
-                            <li><Link href="#services" className="hover:text-white transition-colors">Fleet Maintenance</Link></li>
-                            <li><Link href="#services" className="hover:text-white transition-colors">Battery & Tire Support</Link></li>
-                            <li><Link href="#services" className="hover:text-white transition-colors">EV Specialist Support</Link></li>
+                            <li><Link href="#fleet-dispatch" className="hover:text-white transition-colors">Heavy-Duty Recovery</Link></li>
+                            <li><Link href="#fleet-dispatch" className="hover:text-white transition-colors">Medium-Duty Support</Link></li>
+                            <li><Link href="#fleet-dispatch" className="hover:text-white transition-colors">Light Utility Assist</Link></li>
+                            <li><Link href="#vehicle-classes" className="hover:text-white transition-colors">Fleet Weight Guide</Link></li>
+                            <li><Link href="#network-advantage" className="hover:text-white transition-colors">Nationwide Network</Link></li>
                         </ul>
                     </div>
 
-                    {/* Company */}
+                    {/* Quick Links */}
                     <div>
-                        <h4 className="text-white font-bold uppercase tracking-widest text-xs mb-6">Company</h4>
+                        <h4 className="text-white font-bold uppercase tracking-widest text-[10px] mb-6">Company</h4>
                         <ul className="space-y-4 text-sm">
                             <li><Link href="#about" className="hover:text-white transition-colors">About Us</Link></li>
-                            <li><Link href="#" className="hover:text-white transition-colors">Our Network</Link></li>
-                            <li><Link href="#" className="hover:text-white transition-colors">Compliance</Link></li>
-                            <li><Link href="#" className="hover:text-white transition-colors">Careers</Link></li>
+                            <li><Link href="#founder" className="hover:text-white transition-colors">Founder & Vision</Link></li>
+                            <li><Link href="#network-advantage" className="hover:text-white transition-colors">Our Global Network</Link></li>
+                            {/* <li><Link href="#" className="hover:text-white transition-colors">Compliance</Link></li> */}
                             <li><Link href="#contact" className="hover:text-white transition-colors">Contact Support</Link></li>
                         </ul>
                     </div>

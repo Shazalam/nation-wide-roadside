@@ -39,7 +39,7 @@ const NetworkAdvantage = () => {
   ];
 
   return (
-    <section className="relative bg-[#0b1017] py-20 lg:py-32 overflow-hidden">
+    <section id="network-advantage" className="relative bg-[#0b1017] py-20 lg:py-32 overflow-hidden scroll-mt-24">
       {/* Background patterns */}
       <div className="absolute inset-0 z-0 opacity-20">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-amber-500/10 blur-[120px] rounded-full translate-x-1/2 -translate-y-1/2" />

@@ -30,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${oswald.variable}`}>
+    <html lang="en" className={`${inter.variable} ${oswald.variable} scroll-smooth`}>
       <body className="bg-brand-mutedBg text-slate-900 selection:bg-brand-primary selection:text-white antialiased">
         <Providers>
           <div className="flex flex-col min-h-screen">
