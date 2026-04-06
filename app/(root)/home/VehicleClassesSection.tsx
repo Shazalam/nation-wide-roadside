@@ -22,7 +22,7 @@ const classImages = [
 
 const VehicleClassesSection = () => {
   return (
-    <section id="vehicle-classes" className="relative bg-[#0a0f18] py-24 md:py-32 overflow-hidden selection:bg-brand-primary/30">
+    <section id="vehicle-classes" className="relative bg-[#0a0f18] py-24 md:py-32 overflow-hidden selection:bg-brand-primary/30 scroll-mt-24">
       {/* HIGH-TECH INDUSTRIAL BACKGROUND */}
       <div className="absolute inset-0 opacity-[0.05] pointer-events-none">
         <div className="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:24px_24px]" />
@@ -46,17 +46,17 @@ const VehicleClassesSection = () => {
               Official Weight Standard Guide
             </span>
           </motion.div>
-          
+
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               className="text-4xl md:text-7xl font-[1000] text-white leading-[0.85] tracking-tighter uppercase"
             >
               FLEET <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-blue-400">CLASSIFICATIONS</span>
             </motion.h2>
-            
-            <motion.p 
+
+            <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               className="max-w-xl text-slate-400 text-base md:text-lg font-medium leading-relaxed border-l-2 border-slate-800 pl-8"
@@ -79,7 +79,7 @@ const VehicleClassesSection = () => {
             >
               {/* CARD CONTAINER */}
               <div className="relative overflow-hidden rounded-2xl md:rounded-[2rem] border border-white/5 bg-white/[0.02] backdrop-blur-sm transition-all duration-700 hover:border-brand-primary/30 hover:bg-white/[0.04] p-6 lg:p-8 group h-full">
-                
+
                 {/* TOP LABELS */}
                 <div className="flex items-start justify-between mb-8">
                   <div className="flex flex-col">
@@ -101,7 +101,7 @@ const VehicleClassesSection = () => {
                     className="w-full h-auto object-cover transition-transform duration-1000 group-hover:scale-[1.05]"
                     priority={index < 2}
                   />
-                  
+
                   {/* Subtle Grain Overlay on Image */}
                   <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
                 </div>
@@ -123,7 +123,7 @@ const VehicleClassesSection = () => {
         </div>
 
         {/* BOTTOM METRICS */}
-        <div className="mt-16 md:mt-24 grid grid-cols-2 lg:grid-cols-4 gap-8 border-t border-white/5 pt-12">
+        {/* <div className="mt-16 md:mt-24 grid grid-cols-2 lg:grid-cols-4 gap-8 border-t border-white/5 pt-12">
           {[
             { label: "Dispatch Precision", value: "99.8%", icon: <Gauge className="w-4 h-4 text-brand-primary" /> },
             { label: "Fleet Coverage", value: "All 50 States", icon: <Truck className="w-4 h-4 text-blue-400" /> },
@@ -144,7 +144,7 @@ const VehicleClassesSection = () => {
               <span className="text-lg md:text-xl font-black text-white italic tracking-tight">{metric.value}</span>
             </motion.div>
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );

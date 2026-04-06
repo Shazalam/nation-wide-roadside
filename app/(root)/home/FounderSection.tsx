@@ -18,7 +18,7 @@ const FounderSection = () => {
   return (
     <section
       id="founder"
-      className="relative bg-[#0b1017] py-16 sm:py-24 overflow-hidden"
+      className="relative bg-[#0b1017] py-16 sm:py-24 overflow-hidden scroll-mt-24"
     >
       {/* Subtle radial glow behind content */}
       <div className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 h-[500px] w-[700px] rounded-full bg-amber-500/[0.03] blur-[120px]" />

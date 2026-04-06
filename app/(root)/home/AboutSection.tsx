@@ -3,7 +3,7 @@ import { ArrowDown } from "lucide-react";
 
 const AboutSection = () => {
   return (
-    <section id="about" className="bg-[#0f141b] py-16 sm:py-24 relative border-t border-[#1e2632]">
+    <section id="about" className="bg-[#0f141b] py-16 sm:py-24 relative border-t border-[#1e2632] scroll-mt-24">
       {/* Background linear gradient similar to image subtly showing */}
       <div
         className="absolute inset-0 z-0 opacity-10 pointer-events-none"

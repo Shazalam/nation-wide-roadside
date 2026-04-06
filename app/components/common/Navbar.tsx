@@ -8,9 +8,11 @@ import { cn } from "@/lib/utils/cn";
 import { Button } from "./Button";
 
 const navLinks = [
-  { href: "/", label: "Home" },
+  { href: "#hero-section", label: "Home" },
   { href: "#about", label: "About" },
-  { href: "#services", label: "Services" },
+  { href: "#fleet-dispatch", label: "Dispatch" },
+  { href: "#vehicle-classes", label: "Fleet Guide" },
+  { href: "#network-advantage", label: "Our Network" },
   { href: "#contact", label: "Contact" }
 ];
 

@@ -112,7 +112,7 @@ const whatSetsUsApart = [
 
 const FleetDispatchSection = () => {
   return (
-    <section className="relative bg-[#0b1017] py-20 lg:py-32 overflow-hidden border-t border-white/[0.05]">
+    <section id="fleet-dispatch" className="relative bg-[#0b1017] py-20 lg:py-32 overflow-hidden border-t border-white/[0.05] scroll-mt-24">
       {/* Background radial glow */}
       <div className="pointer-events-none absolute left-0 top-0 h-[600px] w-full bg-[radial-gradient(circle_at_20%_30%,rgba(59,130,246,0.05),transparent_70%)]" />
 
@@ -209,6 +209,27 @@ const FleetDispatchSection = () => {
             ))}
           </div>
         </div>
+
+        {/* -- OUR MISSION SECTION -- */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mt-32 pt-20 border-t border-white/[0.05]"
+        >
+          <div className="flex gap-8 md:gap-12">
+            <div className="w-1.5 bg-amber-500 rounded-full flex-shrink-0" />
+            <div>
+              <h3 className="text-amber-500 font-bold tracking-[0.25em] text-xl uppercase mb-6">
+                OUR MISSION
+              </h3>
+              <p className="text-lg md:text-xl text-slate-100 font-medium leading-relaxed max-w-5xl">
+                To provide <span className="font-extrabold text-white">every driver in our fleet</span> with the confidence that — regardless of when or where something goes wrong on the road — a <span className="font-extrabold text-white">professional, rapid, and reliable</span> response is already on the way. Roadside assistance isn&apos;t a department at Nationwide Roadside Assistance. <span className="font-extrabold text-white italic">It&apos;s our DNA.</span>
+              </p>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
