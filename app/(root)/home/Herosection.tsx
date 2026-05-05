@@ -75,14 +75,14 @@ export default function HeroSection() {
               </Button>
             </a>
 
-            <Button
+            {/* <Button
               variant="ghost"
               size="lg"
               className="h-14 px-8 rounded-full border border-white/20 hover:bg-white/10 transition-all group font-semibold text-white"
             >
               View Service Area
               <ChevronRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
+            </Button> */}
           </motion.div>
 
           <motion.div
